@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime AI Image Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+    <script>
+        const skapi = new Skapi('ap22oqBfHOrr8X4OeFEc', 'f8e16604-69e4-451c-9d90-4410f801c006');
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo center">Anime AI Generator</a>
+            <ul id="nav-mobile" class="right">
+                <li id="login-link"><a href="login.html">Login</a></li>
+                <li id="logout-link" style="display:none;"><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h4>Describe Your Image</h4>
+        <form id="generate-form" onsubmit="generateImage(event)">
+            <div class="input-field">
+                <textarea id="prompt" name="prompt" class="materialize-textarea" required></textarea>
+                <label for="prompt">Prompt</label>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit">Generate</button>
+        </form>
+        <div id="result" class="section"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
