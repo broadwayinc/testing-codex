@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.M && M.updateTextFields) {
+        M.updateTextFields();
+    }
     const loginLink = document.getElementById('login-link');
     const logoutLink = document.getElementById('logout-link');
     skapi.getProfile().then(profile => {
